@@ -69,7 +69,6 @@ git fetch origin main
 
 git add -A .
 git commit -am "chore: release $patch_tag"
-git push -u origin release-base
 
 tags=("$major_tag" "$minor_tag" "$patch_tag")
 for tag in "${tags[@]}"; do
