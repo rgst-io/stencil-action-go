@@ -22,4 +22,8 @@ description = "Run tests"
 run = "gotestsum"
 
 ## <<Stencil::Block(custom)>>
+[tasks.ci-local]
+run = [
+	"gh act --platform ubuntu-latest=ghcr.io/catthehacker/ubuntu:full-24.04 --job test-action --secret GITHUB_TOKEN=$(gh auth token)",
+]
 ## <</Stencil::Block>>

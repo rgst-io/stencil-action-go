@@ -42,7 +42,7 @@ changelog:
 release:
   prerelease: "auto"
   footer: |-
-    **Full Changelog**: https://github.com/rgst-io/stencil/compare/{{ .PreviousTag }}...{{ .Tag }}
+    **Full Changelog**: https://github.com/rgst-io/stencil-action-go/compare/{{ .PreviousTag }}...{{ .Tag }}
 
 ## <<Stencil::Block(extraReleaseOpts)>>
 ## <</Stencil::Block>>
