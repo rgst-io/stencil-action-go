@@ -1,0 +1,28 @@
+name: stencil-action
+description: Github Action for interacting with stencil
+author: Jared Allard <@jaredallard>
+
+branding:
+  icon: "book"
+  color: "yellow"
+
+inputs:
+  github-token:
+    description: "The GitHub token to use for fetching the latest version of stencil"
+
+  version:
+    description: "The version of stencil to use"
+    default: "latest"
+
+  binary-dir:
+    description: "The directory to store the binary in"
+    default: "~/.local/bin"
+
+  prereleases:
+    description: >
+      Whether to consider prereleases or not when downloading the latest version
+    default: "false"
+
+runs:
+  using: node24
+  main: shim.js
