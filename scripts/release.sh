@@ -67,6 +67,7 @@ git remote add origin https://github.com/rgst-io/stencil-action-go
 git switch -c release-base
 git fetch origin main
 
+git add -A .
 git commit -am "chore: release $patch_tag"
 git push -u origin release-base
 
