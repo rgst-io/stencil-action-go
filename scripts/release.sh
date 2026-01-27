@@ -70,10 +70,18 @@ git fetch origin main
 git add -A .
 git commit -am "chore: release $patch_tag"
 
-tags=("$major_tag" "$minor_tag" "$patch_tag")
+tags=("$patch_tag" "$minor_tag" "$major_tag")
 for tag in "${tags[@]}"; do
 	git tag "$tag"
-	git push origin "refs/tags/$tag"
+
+	# Only allow force pushing for major/minor. Patch we shouldn't allow
+	# to be overwritten (at least not automatically).
+	extra_args=("--force")
+	if [[ "$tag" == "$patch_tag" ]]; then
+		extra_args=()
+	fi
+
+	git push origin "${extra_args[@]}" "refs/tags/$tag"
 done
 popd >/dev/null
 
