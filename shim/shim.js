@@ -16,7 +16,7 @@ const arch = os.arch();
 const GOOS = platform === 'win32' ? 'windows' : platform;
 const GOARCH = archMap[arch] || arch;
 
-const binary = `${__dirname}/stencil-action-${GOOS}-${GOARCH}${GOOS === 'windows' ? '.exe' : ''}`
+const binary = `${__dirname}/action-go-shim-${GOOS}-${GOARCH}${GOOS === 'windows' ? '.exe' : ''}`
 
 const result = childProcess.spawnSync(binary, process.argv.slice(2), {
 	stdio: 'inherit',

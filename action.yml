@@ -7,6 +7,13 @@ branding:
   color: "yellow"
 
 inputs:
+  action_ref:
+    description: "(INTERNAL USAGE ONLY) `github.action_ref`"
+    default: "${{ github.action_ref || '0.1.3' }}"
+  action_repo:
+    description: "(INTERNAL USAGE ONLY) `github.action_repo`"
+    default: "${{ github.action_repository || 'rgst-io/stencil-action-go' }}"
+
   github-token:
     description: "The GitHub token to use for fetching the latest version of stencil"
 
@@ -25,4 +32,4 @@ inputs:
 
 runs:
   using: node24
-  main: shim.js
+  main: ./shim/shim.js
