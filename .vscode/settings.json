@@ -3,7 +3,10 @@
 	"go.formatTool": "goimports",
 	"go.useLanguageServer": true,
 	"go.alternateTools": {
-		"golangci-lint-v2": "golangci-lint"
+		"golangci-lint-v2": "golangci-lint",
+		"go": "${workspaceFolder}/.vscode/mise-tools/go",
+		"dlv": "${workspaceFolder}/.vscode/mise-tools/dlv",
+		"gopls": "${workspaceFolder}/.vscode/mise-tools/gopls"
 	},
 	"files.trimTrailingWhitespace": true,
 	"editor.formatOnSave": true,
@@ -13,5 +16,9 @@
 	},
 	"[yaml]": {
 		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"go.goroot": "${workspaceFolder}/.vscode/mise-tools/goRoot",
+	"debug.javascript.defaultRuntimeExecutable": {
+		"pwa-node": "${workspaceFolder}/.vscode/mise-tools/node"
 	}
 }
