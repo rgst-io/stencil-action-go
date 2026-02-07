@@ -51,6 +51,8 @@ jobs:
         run: |-
           echo "version=$(mise current goreleaser)" >> "$GITHUB_OUTPUT"
         id: goreleaser
+      - name: Set up git user
+        uses: fregante/setup-git-user@v2
       - name: Download syft (SBOM)
         uses: anchore/sbom-action/download-syft@v0
 
