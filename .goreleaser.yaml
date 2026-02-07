@@ -45,4 +45,7 @@ release:
     **Full Changelog**: https://github.com/rgst-io/stencil-action-go/compare/{{ .PreviousTag }}...{{ .Tag }}
 
 ## <<Stencil::Block(extraReleaseOpts)>>
+archives:
+  - name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}"
+    format: "binary"
 ## <</Stencil::Block>>
