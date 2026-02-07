@@ -1,0 +1,4 @@
+action_repo: rgst-io/stencil-action-go
+action_ref: latest
+pattern: "stencil-action-{{ .GOOS }}-{{ .GOARCH }}{{ .Ext }}"
+validate_attestations: false

@@ -148,18 +148,17 @@ git:
   tag_sort: -version:refname
 report_sizes: true
 metadata:
-  mod_timestamp: "1769618408"
+  mod_timestamp: "1770464488"
 upx:
   - enabled: "true"
     binary: upx
     compress: "9"
     lzma: true
 mcp:
-  github:
-    name: ""
-    title: ""
-    auth:
-      type: none
+  name: ""
+  title: ""
+  auth:
+    type: none
 github_urls:
   download: https://github.com
 gitlab_urls:

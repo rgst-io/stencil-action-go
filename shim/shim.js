@@ -19,8 +19,8 @@ const GOARCH = archMap[arch] || arch;
 
 const binary = `${__dirname}/action-go-shim-${GOOS}-${GOARCH}${GOOS === 'windows' ? '.exe' : ''}`
 
-// GITHUB_ACTION_PATH isn't set when we're uses: ./ is used, so in that
-// case just default to the root of the repository.
+// GITHUB_ACTION_PATH isn't set when uses: ./ is used, so in that case
+// just default to the root of the repository.
 if (!process.env.GITHUB_ACTION_PATH) {
 	process.env.GITHUB_ACTION_PATH = __dirname
 	console.warn(
@@ -37,7 +37,7 @@ const result = childProcess.spawnSync(binary, process.argv.slice(2), {
 });
 
 if (result.error) {
-	console.error('shim: failed to spawn process:', result.error);
+	console.error('[action-go-shim (js)] failed to spawn process:', result.error);
 	process.exit(1);
 }
 
