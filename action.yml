@@ -2,10 +2,12 @@ name: stencil-action
 description: Github Action for interacting with stencil
 author: Jared Allard <@jaredallard>
 
+# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
   icon: "book"
   color: "yellow"
 
+# Define your inputs here.
 inputs:
   github-token:
     description: "The GitHub token to use for fetching the latest version of stencil"
