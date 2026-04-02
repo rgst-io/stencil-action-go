@@ -10,13 +10,13 @@ import (
 
 	"path/filepath"
 
-	"github.com/jaredallard/archives"
-	"github.com/jaredallard/cmdexec"
-	"github.com/jaredallard/vcs"
-	"github.com/jaredallard/vcs/releases"
-	"github.com/jaredallard/vcs/resolver"
-	"github.com/jaredallard/vcs/token"
 	"github.com/sethvargo/go-githubactions"
+	"go.rgst.io/jaredallard/archives/v2"
+	"go.rgst.io/jaredallard/cmdexec/v2"
+	"go.rgst.io/jaredallard/vcs/v2"
+	"go.rgst.io/jaredallard/vcs/v2/releases"
+	"go.rgst.io/jaredallard/vcs/v2/resolver"
+	"go.rgst.io/jaredallard/vcs/v2/token"
 )
 
 var (
