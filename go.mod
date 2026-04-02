@@ -3,7 +3,7 @@ module github.com/rgst-io/stencil-action-go
 go 1.25
 
 require (
-	github.com/jaredallard/archives v1.0.2
+	github.com/jaredallard/archives/v2 v2.0.0
 	github.com/jaredallard/cmdexec v1.4.0
 	github.com/jaredallard/vcs v1.0.1
 	github.com/sethvargo/go-githubactions v1.3.2
