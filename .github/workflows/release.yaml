@@ -62,7 +62,7 @@ jobs:
         run: |-
           git tag -a "$NEXT_VERSION" -m "Release $NEXT_VERSION"
       - name: Create release artifacts and Github Release
-        uses: goreleaser/goreleaser-action@v6
+        uses: goreleaser/goreleaser-action@v7
         with:
           distribution: goreleaser
           version: v${{ steps.goreleaser.outputs.version }}
