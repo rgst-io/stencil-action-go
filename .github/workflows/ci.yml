@@ -24,7 +24,7 @@ jobs:
       # TODO(jaredallard): Support local builds.
       - name: Use known good version
         run: |-
-          echo "action_ref=v0.2.0" >> shim/shim-config.yml
+          echo "action_ref: v0.2.0" >> shim/shim-config.yml
 
       - uses: ./
         env:
