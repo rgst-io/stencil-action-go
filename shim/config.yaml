@@ -66,6 +66,12 @@ archives:
       - src: README*
       - src: changelog*
       - src: CHANGELOG*
+srpm:
+  nfpmrpm: {}
+  package_name: action-go-shim
+  file_name_template: '{{ .PackageName }}-{{ .Version }}.src.rpm'
+  bins:
+    action-go-shim: '%{goipath}'
 snapshot:
   version_template: '{{ incpatch .Version }}-next'
 checksum:
@@ -118,7 +124,7 @@ announce:
   linkedin:
     message_template: '{{ .ProjectName }} {{ .Tag }} is out! Check it out at {{ .ReleaseURL }}'
   telegram:
-    message_template: '{{ mdv2escape .ProjectName }} {{ mdv2escape .Tag }} is out{{ mdv2escape "!" }} Check it out at {{ mdv2escape .ReleaseURL }}'
+    message_template: '{{ print .ProjectName " " .Tag " is out! Check it out at " .ReleaseURL | mdv2escape }}'
     parse_mode: MarkdownV2
   webhook:
     message_template: '{ "message": "{{ .ProjectName }} {{ .Tag }} is out! Check it out at {{ .ReleaseURL }}"}'
@@ -141,7 +147,7 @@ git:
   tag_sort: -version:refname
 report_sizes: true
 metadata:
-  mod_timestamp: "1771235332"
+  mod_timestamp: "1775104957"
 upx:
   - enabled: "true"
     binary: upx

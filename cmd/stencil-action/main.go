@@ -1,3 +1,22 @@
+// Copyright (C) 2026 stencil-action-go contributors
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as
+// published by the Free Software Foundation, either version 3 of the
+// License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this program. If not, see
+// <https://www.gnu.org/licenses/>.
+//
+// SPDX-License-Identifier: LGPL-3.0
+
+// Package main implements stencil-action-go.
 package main
 
 import (
@@ -5,6 +24,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"os/exec"
 	"runtime"
 	"strings"
 
@@ -73,7 +93,7 @@ func main() {
 	)
 	extractDir := filepath.Dir(extractPath)
 
-	if err := os.MkdirAll(extractDir, 0o755); err != nil {
+	if err := os.MkdirAll(extractDir, 0o750); err != nil {
 		githubactions.Fatalf("failed to create extract path dirs %q: %v", extractDir, err)
 	}
 
@@ -87,6 +107,7 @@ func main() {
 		githubactions.Fatalf("failed to download release: %v", err)
 	}
 
+	//nolint:gosec // Why: By design.
 	f, err := os.Create(extractPath)
 	if err != nil {
 		githubactions.Fatalf("failed to create %q: %v", extractPath, err)
@@ -112,12 +133,16 @@ func main() {
 		githubactions.Fatalf("failed to chmod +x stencil: %v", err)
 	}
 
-	githubactions.Infof("Validating binary attestation ...")
-	cmd := cmdexec.Command("gh", "attestation", "verify", extractPath, "--repo", repo)
-	cmd.SetEnviron([]string{"GH_TOKEN=" + tok})
-	cmd.UseOSStreams(true)
-	if err := cmd.Run(); err != nil {
-		githubactions.Fatalf("attestation validation failed: %v", err)
+	if _, err := exec.LookPath("gh"); err != nil {
+		githubactions.Infof("Validating binary attestation ...")
+		cmd := cmdexec.Command("gh", "attestation", "verify", extractPath, "--repo", repo)
+		cmd.SetEnviron([]string{"GH_TOKEN=" + tok})
+		cmd.UseOSStreams(true)
+		if err := cmd.Run(); err != nil {
+			githubactions.Fatalf("attestation validation failed: %v", err)
+		}
+	} else {
+		githubactions.Warningf("Skipping binary attestation validation (gh CLI not found)")
 	}
 
 	githubactions.AddPath(extractDir)

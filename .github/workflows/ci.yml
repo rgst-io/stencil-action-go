@@ -21,6 +21,11 @@ jobs:
         with:
           persist-credentials: false
 
+      # TODO(jaredallard): Support local builds.
+      - name: Use known good version
+        run: |-
+          echo "action_ref=v0.2.0" >> shim/shim-config.yml
+
       - uses: ./
         env:
           GH_TOKEN: ${{ github.token }}

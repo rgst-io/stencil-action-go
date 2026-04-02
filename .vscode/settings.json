@@ -1,13 +1,7 @@
 {
-	"go.lintTool": "golangci-lint-v2",
+	"go.lintTool": "golangci-lint",
 	"go.formatTool": "goimports",
 	"go.useLanguageServer": true,
-	"go.alternateTools": {
-		"golangci-lint-v2": "golangci-lint",
-		"go": "${workspaceFolder}/.vscode/mise-tools/go",
-		"dlv": "${workspaceFolder}/.vscode/mise-tools/dlv",
-		"gopls": "${workspaceFolder}/.vscode/mise-tools/gopls"
-	},
 	"files.trimTrailingWhitespace": true,
 	"editor.formatOnSave": true,
 	"shellcheck.customArgs": ["-P", "SCRIPTDIR", "-x"],
@@ -17,8 +11,13 @@
 	"[yaml]": {
 		"editor.defaultFormatter": "redhat.vscode-yaml"
 	},
+
+	"mise.configureExtensionsAutomatically": true,
+	"mise.configureExtensionsAutomaticallyIncludeList": ["golang.go"],
 	"go.goroot": "${workspaceFolder}/.vscode/mise-tools/goRoot",
-	"debug.javascript.defaultRuntimeExecutable": {
-		"pwa-node": "${workspaceFolder}/.vscode/mise-tools/node"
+	"go.alternateTools": {
+		"go": "${workspaceFolder}/.vscode/mise-tools/go",
+		"dlv": "${workspaceFolder}/.vscode/mise-tools/dlv",
+		"gopls": "${workspaceFolder}/.vscode/mise-tools/gopls"
 	}
 }

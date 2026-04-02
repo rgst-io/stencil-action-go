@@ -1,14 +1,25 @@
 
-## [0.3.0](https://github.com/rgst-io/action-go-shim/compare/v0.2.6..v0.3.0) - 2026-02-16
+## [0.4.0](https://github.com/rgst-io/action-go-shim/compare/v0.3.0..v0.4.0) - 2026-04-02
+
+### ⛰️  Features
+
+- Support other VCS providers - ([fb20b8a](https://github.com/rgst-io/action-go-shim/commit/fb20b8a38e9d3e14b7c9502288bb56b9b628b8c6)) by @jaredallard
+
 
 ### ⚙️ Miscellaneous Tasks
 
-- *(deps)* Upgrade transitive deps - ([9467384](https://github.com/rgst-io/action-go-shim/commit/94673846b5392aaf3f811e2f637242780af8a52f))
-- Small changelog tweaks - ([5582504](https://github.com/rgst-io/action-go-shim/commit/55825041a9806754240243828e1893e0d2c9b030)) by @jaredallard
-- Rename cliff.toml - ([35f0928](https://github.com/rgst-io/action-go-shim/commit/35f0928f28b06a052fbcfaba8d481b7dccd069da)) by @jaredallard
-- Support less platforms - ([fce68eb](https://github.com/rgst-io/action-go-shim/commit/fce68eb6b9dc72d08c65ba71978f944e242368e4)) by @jaredallard
-- Copy CHANGELOG.md to clean release dir - ([e1ad572](https://github.com/rgst-io/action-go-shim/commit/e1ad572fbed8f9eba29bcb6ff6af6808d57d5779)) by @jaredallard
-- Generate release notes and non-snapshot builds - ([2a748ff](https://github.com/rgst-io/action-go-shim/commit/2a748ff359179dfcb161ffd3053c8113c5c71260)) by @jaredallard
-- Remove poc notice from README - ([58b9f7d](https://github.com/rgst-io/action-go-shim/commit/58b9f7db0ae9f8d821f07ba4050fdf38536e8704)) by @jaredallard
+- *(deps)* Upgrade deps - ([83d53aa](https://github.com/rgst-io/action-go-shim/commit/83d53aa80b72ad67779f06144a983a403b7c9fc7))
+- *(deps)* Update module github.com/caarlos0/env/v11 to v11.4.0 ([#3](https://github.com/rgst-io/action-go-shim/issues/3)) - ([309d4f6](https://github.com/rgst-io/action-go-shim/commit/309d4f6d9bfe7a8b3f6ef0cf2a52e405d2fba9a2))
+- *(deps)* Update dependency golangci-lint to v2.11.4 ([#2](https://github.com/rgst-io/action-go-shim/issues/2)) - ([b777a40](https://github.com/rgst-io/action-go-shim/commit/b777a4006755b1bae56012e68a823f1af025575b))
+- *(deps)* Update jdx/mise-action action to v4 ([#6](https://github.com/rgst-io/action-go-shim/issues/6)) - ([88ecd78](https://github.com/rgst-io/action-go-shim/commit/88ecd78e9149ea8d6f5d49f234b45b758cd6f3c8))
+- *(deps)* Update actions/attest-build-provenance action to v4 ([#4](https://github.com/rgst-io/action-go-shim/issues/4)) - ([9fe7fde](https://github.com/rgst-io/action-go-shim/commit/9fe7fde0e971bedefa74f5233dd1bb39a274aa8c))
+- *(deps)* Update module github.com/jaredallard/cmdexec to v1.4.1 ([#5](https://github.com/rgst-io/action-go-shim/issues/5)) - ([c3f4e0b](https://github.com/rgst-io/action-go-shim/commit/c3f4e0b1a4cab57552a33a4fb0eab7b5fcf28609))
+- *(deps)* Update dependency golang to v1.26.1 ([#1](https://github.com/rgst-io/action-go-shim/issues/1)) - ([1ffc303](https://github.com/rgst-io/action-go-shim/commit/1ffc303aa39c45959a1382fa9712c71ab19af1c4))
+- Lint - ([c6b0088](https://github.com/rgst-io/action-go-shim/commit/c6b008882d1bd7cdb5213fd6e75d663928572aab)) by @jaredallard
+- Copyright headers - ([0338a37](https://github.com/rgst-io/action-go-shim/commit/0338a37a2cc47c7273d89f5e48ad85cbe86643ad)) by @jaredallard
+- Remove unused stencil blocks - ([0405d47](https://github.com/rgst-io/action-go-shim/commit/0405d471971a72d43b00f9e11fe9e9d5f223d198)) by @jaredallard
 
 
+## New Contributors
+
+- @renovate[bot] made their first contribution in [#3](https://github.com/rgst-io/action-go-shim/pull/3)
